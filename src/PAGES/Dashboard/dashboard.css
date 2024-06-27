@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .NavBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid rgb(105, 105, 105);
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Ensure navbar stays above content */
+  }
+  
+  .NavBar h3 {
+    margin: 20px;
+    font-size: 22px;
+  }
+  
+  .NavBar i {
+    margin: 6px;
+  }
+  
+  .items {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+  }
+  
+  .NavBar li {
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    padding: 15px;
+    list-style-type: none;
+    cursor: pointer;
+  }
+  
+  .NavBar li:hover {
+    background-color: rgb(214, 214, 248);
+  }
+  
+  .NavBar li.active {
+    background-color: rgb(100, 149, 237); /* Active background color */
+    color: white; /* Active text color */
+  }
+
+  .dashboard {
+    display: flex;
+  }
+  
+  .component {
+    margin-left: 250px; /* Adjust to match the width of NavBar */
+    flex: 1;
+    padding: 20px; /* Add padding to separate from NavBar */
+    margin-top: 20px; /* Adjust margin to provide spacing */
+  }
+  
+  .component h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .menu-icon {
+    display: none; /* Initially hide menu icon on larger screens */
+  }
+  
+  /* Media Query for Responsive Design */
+  @media (max-width: 900px) {
+    .NavBar {
+      transform: translateX(-100%);
+      position: fixed;
+      z-index: 1000;
+      width: 250px; /* Adjust width for smaller screens */
+    }
+  
+    .menu-icon {
+      display: block; /* Display menu icon on smaller screens */
+      position: fixed;
+      top: 20px;
+      right: 20px; /* Adjust position as needed */
+      z-index: 1100; /* Ensure menu icon is above navbar */
+      cursor: pointer;
+    }
+  
+    .menu-icon i {
+      font-size: 24px; /* Adjust icon size */
+    }
+  
+    .items {
+      top: 80px;
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    .NavBar.open {
+      transform: translateX(0);
+    }
+  
+    .dashboard {
+      flex-direction: column; /* Stack components vertically on smaller screens */
+    }
+  
+    .component {
+      margin-left: 0;
+      padding: 10px; /* Adjust padding for smaller screens */
+      margin-top: 0; /* Remove margin-top for smaller screens */
+    }
+  }
+  

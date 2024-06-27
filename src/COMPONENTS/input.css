@@ -1,0 +1,119 @@
+.input-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+  
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.scroll h2{
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.scroll h3{
+    font-size: 20px;
+}
+
+.dropdown{
+    margin-left: 3px;
+    border-radius: 5px;
+    width: 400px;
+    height: 38px;
+    border-color: rgb(178, 177, 177);
+}
+
+
+.startingDetails{
+    display: flex;
+    gap: 100px;
+}
+
+
+.endingDetails{
+    display: flex;
+    gap: 100px;
+}
+
+.btn{
+    margin: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn button{
+    background-color: blue;
+    width: 300px;
+    height: 35px;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+    border: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn button:hover{
+    transform: scale(1.03);
+}
+
+.time{
+    width: 400px;
+}
+  
+.error{
+    margin: 30px auto;
+}
+
+
+
+/* Hide the default dropdown arrow */
+.dropdown::-ms-expand {
+    display: none;
+  }
+  
+  .dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><polygon points="0,0 10,0 5,5"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    padding: 8px 24px 8px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333; /* Default text color */
+  }
+  
+  /* Placeholder style */
+  .dropdown option[disabled] {
+    color: red; /* Placeholder color */
+  }
+  
+  /* Style for options */
+  .dropdown option {
+    color: black; /* Color for options */
+  }
+  
+  /* Style for dropdown when it's open */
+  .dropdown:focus {
+    outline: none;
+    border: 3px solid;
+    border-color: rgb(60, 60, 246); /* Border color when focused */
+  }
+  
