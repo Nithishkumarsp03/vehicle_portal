@@ -25,7 +25,7 @@ const pool = mysql.createPool({
   // password: "Bitsathy@001",
   password: "",
   // database: "id22367027_vehicleportal",
-  database: "vehicle_portal",
+  database: "vehiclebooking",
   connectionLimit: 200,
 });
 
