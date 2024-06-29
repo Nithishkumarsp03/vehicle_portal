@@ -69,29 +69,28 @@
   }
   
   .menu-icon {
-    display: none; /* Initially hide menu icon on larger screens */
+    display: none;
   }
   
-  /* Media Query for Responsive Design */
   @media (max-width: 900px) {
     .NavBar {
       transform: translateX(-100%);
       position: fixed;
       z-index: 1000;
-      width: 250px; /* Adjust width for smaller screens */
+      width: 250px; 
     }
   
     .menu-icon {
-      display: block; /* Display menu icon on smaller screens */
+      display: block;
       position: fixed;
       top: 20px;
-      right: 20px; /* Adjust position as needed */
-      z-index: 1100; /* Ensure menu icon is above navbar */
+      right: 20px;
+      z-index: 1100;
       cursor: pointer;
     }
   
     .menu-icon i {
-      font-size: 24px; /* Adjust icon size */
+      font-size: 24px;
     }
   
     .items {
@@ -107,13 +106,13 @@
     }
   
     .dashboard {
-      flex-direction: column; /* Stack components vertically on smaller screens */
+      flex-direction: column;
     }
   
     .component {
       margin-left: 0;
-      padding: 10px; /* Adjust padding for smaller screens */
-      margin-top: 0; /* Remove margin-top for smaller screens */
+      padding: 10px;
+      margin-top: 0; 
     }
   }
   

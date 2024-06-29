@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'
+import logo from '../../assets/bit.png';
+import './Login.css';
 
 export default function Google() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
 
-  const handleLoginSuccess = async(response) => {
+  const handleLoginSuccess = async (response) => {
     const { credential } = response;
     const payload = JSON.parse(atob(credential.split('.')[1]));
 
     const userProfile = {
       name: payload.name,
       picture: payload.picture,
-      email: payload.email, // Include email
+      email: payload.email,
     };
 
     console.log(userProfile.name);
@@ -25,7 +26,7 @@ export default function Google() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userProfile), // Correctly serialize the body to JSON
+        body: JSON.stringify(userProfile),
       });
 
       if (response.ok) {
@@ -38,7 +39,6 @@ export default function Google() {
           } else {
             navigate(`/dashboard/${username}/${userid}`);
           }
-          
           console.log('Login Successful');
         } else {
           console.log('Login Failed');
@@ -59,19 +59,26 @@ export default function Google() {
   };
 
   return (
+    <div className='gsignin'>
     <GoogleOAuthProvider clientId="726273910785-stqg51cb51merm3nefnvla8u9i3sakj0.apps.googleusercontent.com">
-      <div className='container'>
-      <div className="header">
-        <h3>Sign in with GoogleLogin</h3>
+      <div className="container">
+        <div className="header">
+          <p className='welcome'>Welcome Back !</p>
+          <h1 className='title'>VEHICLE PORTAL</h1>
+          <h3 className='signin'>Sign in with GoogleLogin</h3>
+        </div>
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className="google">
+          <GoogleLogin 
+            onSuccess={handleLoginSuccess}
+            onError={handleLoginFailure}
+          />
+        </div>
+        {error && <div className="error">{error}</div>}
       </div>
-      <div className="google">
-        <GoogleLogin 
-          onSuccess={handleLoginSuccess}
-          onError={handleLoginFailure}
-        />
-      </div>
-      {error}
-    </div>
     </GoogleOAuthProvider>
+    </div>
   );
 }

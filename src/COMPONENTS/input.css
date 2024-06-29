@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100%;
-}
+  }
   
   .input-container {
     display: flex;
@@ -15,46 +15,46 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-}
-
-.scroll h2{
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100%; /* Ensure the container does not exceed the viewport height */
+  }
+  
+  .scroll h2 {
     font-size: 30px;
     text-align: center;
     align-items: center;
-}
-
-.scroll h3{
+  }
+  
+  .scroll h3 {
     font-size: 20px;
-}
-
-.dropdown{
+  }
+  
+  .dropdown {
     margin-left: 3px;
     border-radius: 5px;
     width: 400px;
     height: 38px;
     border-color: rgb(178, 177, 177);
-}
-
-
-.startingDetails{
+  }
+  
+  .startingDetails {
     display: flex;
     gap: 100px;
-}
-
-
-.endingDetails{
+  }
+  
+  .endingDetails {
     display: flex;
     gap: 100px;
-}
-
-.btn{
+  }
+  
+  .btn {
     margin: 30px;
     text-align: center;
     align-items: center;
     justify-content: center;
-}
-
-.btn button{
+  }
+  
+  .btn button {
     background-color: blue;
     width: 300px;
     height: 35px;
@@ -65,24 +65,22 @@
     border: white;
     cursor: pointer;
     transition: 0.5s;
-}
-
-.btn button:hover{
-    transform: scale(1.03);
-}
-
-.time{
-    width: 400px;
-}
+  }
   
-.error{
+  .btn button:hover {
+    transform: scale(1.03);
+  }
+  
+  .time {
+    width: 400px;
+  }
+  
+  .error {
     margin: 30px auto;
-}
-
-
-
-/* Hide the default dropdown arrow */
-.dropdown::-ms-expand {
+  }
+  
+  /* Hide the default dropdown arrow */
+  .dropdown::-ms-expand {
     display: none;
   }
   
@@ -114,6 +112,44 @@
   .dropdown:focus {
     outline: none;
     border: 3px solid;
-    border-color: rgb(60, 60, 246); /* Border color when focused */
+    border-color: rgb(60, 60, 246); 
+  }
+  
+  @media (max-width: 600px) {
+    .input-container {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-height: 100%; 
+    }
+  
+    .startingDetails, .endingDetails {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .dropdown, .time, .btn button {
+      width: 100%;
+    }
+  
+    .btn {
+      margin: 20px 0;
+    }
+  
+    .scroll h2 {
+      font-size: 24px;
+    }
+  
+    .scroll h3 {
+      font-size: 18px;
+    }
+  
+    .btn button {
+      width: 100%;
+      font-size: 18px;
+    }
   }
   
